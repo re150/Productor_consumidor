@@ -70,6 +70,8 @@ public class view extends javax.swing.JFrame {
         box3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         tex1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -77,7 +79,6 @@ public class view extends javax.swing.JFrame {
         errorP = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         tex2 = new javax.swing.JLabel();
-        con_P = new javax.swing.JLabel();
         cont_cons = new javax.swing.JLabel();
         S1 = new javax.swing.JLabel();
         S2 = new javax.swing.JLabel();
@@ -137,22 +138,28 @@ public class view extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
         box4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/box2.png"))); // NOI18N
-        jPanel1.add(box4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
+        jPanel1.add(box4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, -1, -1));
 
         box1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/box2.png"))); // NOI18N
-        jPanel1.add(box1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
+        jPanel1.add(box1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
 
         box2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/box2.png"))); // NOI18N
-        jPanel1.add(box2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
+        jPanel1.add(box2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
 
         box3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/box2.png"))); // NOI18N
-        jPanel1.add(box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, -1));
+        jPanel1.add(box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/float2.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, 100));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/sky2.png"))); // NOI18N
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 200, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/cinta4.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/cinta4.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, -1, -1));
 
         tex1.setText("cantida de producto a produccir");
 
@@ -163,7 +170,7 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        canP.setText("0");
+        canP.setToolTipText("");
         canP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 canPActionPerformed(evt);
@@ -207,22 +214,19 @@ public class view extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tex2.setText("estado productor");
-        jPanel3.add(tex2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 119, -1));
-
-        con_P.setText("0");
-        jPanel3.add(con_P, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 21, -1));
+        jPanel3.add(tex2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 119, -1));
 
         cont_cons.setText("0");
-        jPanel3.add(cont_cons, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 21, -1));
+        jPanel3.add(cont_cons, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 21, -1));
 
         S1.setText(".");
-        jPanel3.add(S1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 110, 20));
+        jPanel3.add(S1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 110, 20));
 
         S2.setText(".");
-        jPanel3.add(S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 110, 20));
+        jPanel3.add(S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 110, 20));
 
         S3.setText(".");
-        jPanel3.add(S3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 110, 20));
+        jPanel3.add(S3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 110, 20));
 
         S4.setText(".");
         jPanel3.add(S4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 110, 20));
@@ -234,7 +238,7 @@ public class view extends javax.swing.JFrame {
         jPanel3.add(S6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 110, 20));
 
         tex3.setText("estado consumidor");
-        jPanel3.add(tex3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 119, -1));
+        jPanel3.add(tex3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 119, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,13 +248,13 @@ public class view extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(89, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71))))
+                        .addGap(48, 48, 48))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +278,6 @@ public class view extends javax.swing.JFrame {
          int cantidadP;
        cantidadP = Integer.parseInt(canP.getText());
       // cantidadC = Integer.parseInt(canC.getText());
-        System.out.println(cantidadP);
         
          if (cantidadP <= 0  )
        {
@@ -284,14 +287,13 @@ public class view extends javax.swing.JFrame {
         errorP.setVisible(false); 
         Gestor ges = new Gestor(cantidadP);
         Productor pro = new Productor(box1,box2,box3,box4,S1,S2,S3,humo1,humo2,humo3,humo4,humo5, humo6,ges);
-        Consumidor con = new Consumidor(car1,car2,car3,car4,con_P,S4,S5,S6,ges);
+        Consumidor con = new Consumidor(car1,car2,car3,car4,cont_cons,S4,S5,S6,ges);
         
         pro.start();
         con.start();
         
          
-       
-      
+          
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -356,7 +358,6 @@ public class view extends javax.swing.JFrame {
     private javax.swing.JLabel car2;
     private javax.swing.JLabel car3;
     private javax.swing.JLabel car4;
-    private javax.swing.JLabel con_P;
     private javax.swing.JLabel cont_cons;
     private javax.swing.JLabel errorP;
     private javax.swing.JLabel humo1;
@@ -372,7 +373,9 @@ public class view extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

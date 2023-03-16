@@ -9,10 +9,10 @@ import javax.swing.JLabel;
  * @author angel
  */
 public class Productor  extends Thread{
-    private int max,prod = 0;
-    private JLabel box1,box2,box3,box4,show1,show2,show3,humo1,humo2,humo3,humo4,humo5,humo6;
+    private int max;
+    private JLabel box1,box2,box3,box4,show1,show2,show3,humo1,humo2,humo3,humo4,humo5,humo6 ;
     private Gestor ges;
-    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6, Gestor ges) {
+    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6 ,Gestor ges) {
     this.max = max;
     this.box1 = box1;
     this.box2 = box2;
@@ -33,48 +33,29 @@ public class Productor  extends Thread{
     
      public void run() 
     {
-        boolean estado = true;
-        
-        
-        
-           
-           synchronized(ges){ 
-               while (ges.act == ges.max)  sleep();
+        while (true){
+          
+          if(ges.act < ges.max){
+            estadoP ("producciendo"); 
+            work ();
+         try{
+             sleep((int)(Math.random() * 1000));
+         }catch (InterruptedException ex) {
+              ex.printStackTrace();
+          }
+            sleep ();
+          estadoP ("sleep");
            ges.producir();
-           work();
-           estadoP ("Producciendo"); 
-           showP();
-             try {
-               estadoP ("sleep");
-                sleep(3000); 
-            } catch (InterruptedException ex) {
-             ex.printStackTrace();
-            }
-             sleep();
-             NshowP ();
-           }    
-           
+          //   contador () ;
+          System.out.println(ges.act);
+        }
+         estadoP ("stock all"); 
+      }
         
-
     }
      
      
-    
-    public void showP () {
-    this.box1.setVisible(true);
-    this.box2.setVisible(true);
-    this.box3.setVisible(true);
-    this.box4.setVisible(true);
-    }
-    
-    public void NshowP () {
-    
-    this.box1.setVisible(false);
-    this.box2.setVisible(false);
-    this.box3.setVisible(false);
-    this.box4.setVisible(true);
-    }
-    
+   
    public void estadoP (String x) 
      {
          String aux1 = show3.getText();
@@ -87,6 +68,10 @@ public class Productor  extends Thread{
      }
      
       public void sleep () {
+        box1.setVisible(false);
+        box2.setVisible(false);
+        box3.setVisible(false);
+        box4.setVisible(false);
       
           humo1.setVisible(false);
           humo2.setVisible(false);
@@ -98,7 +83,12 @@ public class Productor  extends Thread{
       
       
       public void work () {
-      
+
+          box1.setVisible(true);
+          box2.setVisible(true);
+          box3.setVisible(true);
+          box4.setVisible(true);
+    
           humo1.setVisible(true);
           humo2.setVisible(true);
           humo3.setVisible(true);
@@ -107,13 +97,19 @@ public class Productor  extends Thread{
           humo6.setVisible(true);
       }
      
-      public void maxP () {
-          maxP();
-          estadoP ("sleep"); 
-          try {
-                wait();
-            } catch (InterruptedException ex) {
-             ex.printStackTrace();
-            }
-      }
+      
+      
+      /* public void contador () 
+     {
+ 
+      String aux;
+      int  contar = 0;
+    
+      contar = Integer.parseInt(con_P.getText());
+      contar = contar +1;
+      aux =Integer.toString(contar);
+      
+      con_P.setText(aux);
+      
+     }*/
 }

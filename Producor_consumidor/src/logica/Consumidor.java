@@ -29,31 +29,34 @@ public class Consumidor extends Thread {
     
       public void run() 
     {
-        synchronized(ges){               
-         
-        System.out.println(ges.act);
-          while(ges.act == 0) {
-             try {  
-                 estadoC ("sleep"); 
-                 sleep(3000);
-             } catch (InterruptedException ex) {
-              ex.printStackTrace();
-               }
-          }
-         
-           ges.consumir();
-           show();
-           estadoC ("consumiendo");
-            
-            try {
-                sleep(3000);
-            } catch (InterruptedException ex) {
-             ex.printStackTrace();
+     System.out.println(ges.act);
+         while (true){
+             
+            if(ges.act > 0){
+             estadoC ("consumiendo"); 
+             
+                car1.setVisible(true);
+                car2.setVisible(true);
+                car3.setVisible(true);
+                car4.setVisible(true);
+             
+               try{
+                     sleep((int)(Math.random() * 2000));
+                }catch (InterruptedException ex) {
+                     ex.printStackTrace();
+                 }
+               
+                car1.setVisible(false);
+                car2.setVisible(false);
+                car3.setVisible(false);
+                car4.setVisible(false);
+                
+               estadoC ("sleep"); 
+               contador();
+               ges.consumir();
             }
-            Nshow ();
-            
-        }
-      
+              estadoC ("no stock all"); 
+         }
     }
     
     
@@ -61,20 +64,7 @@ public class Consumidor extends Thread {
     
    
     
-    public void show () {
-    this.car1.setVisible(true);
-    this.car2.setVisible(true);
-    this.car3.setVisible(true);
-    this.car4.setVisible(true);
-    }
     
-    public void Nshow () {
-    
-    this.car1.setVisible(false);
-    this.car2.setVisible(false);
-    this.car3.setVisible(false);
-    this.car4.setVisible(true);
-    }
     
      public void estadoC (String x) 
      {
@@ -87,6 +77,20 @@ public class Consumidor extends Thread {
         
      }
      
+     
+      public void contador () 
+     {
+ 
+      String aux;
+      int  contar = 0;
+    
+      contar = Integer.parseInt(cont.getText());
+      contar = contar +1;
+      aux =Integer.toString(contar);
+      
+      cont.setText(aux);
+      
+     }
 
 }
 

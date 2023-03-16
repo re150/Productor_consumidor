@@ -17,14 +17,25 @@ public class Gestor  {
      this.max = max;
     }
    
-     
-     
-     public void consumir() {
-       act --;
-     }
-     
-     public void producir () {
-      act ++; 
+      
+   public  synchronized  void producir () {
+        act ++; 
+        notifyAll();
      } 
+     
+   public synchronized void consumir() {
+        while (act < 0 ) { 
+            try {
+                wait();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
+        act --;
+    }
+     
+   
+     
+     
            
 }
