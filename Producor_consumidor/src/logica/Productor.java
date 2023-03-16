@@ -10,9 +10,9 @@ import javax.swing.JLabel;
  */
 public class Productor  extends Thread{
     private int max;
-    private JLabel box1,box2,box3,box4,show1,show2,show3,humo1,humo2,humo3,humo4,humo5,humo6 ;
+    private JLabel box1,box2,box3,box4,show1,show2,show3,humo1,humo2,humo3,humo4,humo5,humo6,stock ;
     private Gestor ges;
-    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6 ,Gestor ges) {
+    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6 , JLabel stock ,Gestor ges) {
     this.max = max;
     this.box1 = box1;
     this.box2 = box2;
@@ -27,6 +27,7 @@ public class Productor  extends Thread{
     this.humo4 = h4;
     this.humo5 = h5;
     this.humo6 = h6;
+    this.stock = stock;
     this.ges = ges;
     }
     
@@ -39,7 +40,7 @@ public class Productor  extends Thread{
             estadoP ("producciendo"); 
             work ();
          try{
-             sleep((int)(Math.random() * 1000));
+             sleep((int)(Math.random() * 3000));
          }catch (InterruptedException ex) {
               ex.printStackTrace();
           }
@@ -48,8 +49,9 @@ public class Productor  extends Thread{
            ges.producir();
           //   contador () ;
           System.out.println(ges.act);
+          contador ();
         }
-         estadoP ("stock all"); 
+          if(ges.act == ges.max) estadoP ("stock all"); 
       }
         
     }
@@ -99,17 +101,14 @@ public class Productor  extends Thread{
      
       
       
-      /* public void contador () 
+       public void contador () 
      {
  
       String aux;
-      int  contar = 0;
-    
-      contar = Integer.parseInt(con_P.getText());
-      contar = contar +1;
-      aux =Integer.toString(contar);
       
-      con_P.setText(aux);
+      aux =Integer.toString(ges.act);
       
-     }*/
+      stock.setText(aux);
+      
+     }
 }

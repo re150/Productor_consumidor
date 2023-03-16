@@ -41,7 +41,7 @@ public class Consumidor extends Thread {
                 car4.setVisible(true);
              
                try{
-                     sleep((int)(Math.random() * 2000));
+                     sleep((int)(Math.random() * 5000));
                 }catch (InterruptedException ex) {
                      ex.printStackTrace();
                  }

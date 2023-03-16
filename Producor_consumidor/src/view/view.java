@@ -86,7 +86,14 @@ public class view extends javax.swing.JFrame {
         S4 = new javax.swing.JLabel();
         S5 = new javax.swing.JLabel();
         S6 = new javax.swing.JLabel();
+        stock = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         tex3 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,28 +224,49 @@ public class view extends javax.swing.JFrame {
         jPanel3.add(tex2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 119, -1));
 
         cont_cons.setText("0");
-        jPanel3.add(cont_cons, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 21, -1));
+        jPanel3.add(cont_cons, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 21, -1));
 
         S1.setText(".");
-        jPanel3.add(S1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 110, 20));
+        jPanel3.add(S1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 130, 20));
 
         S2.setText(".");
-        jPanel3.add(S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 110, 20));
+        jPanel3.add(S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 120, 20));
 
         S3.setText(".");
-        jPanel3.add(S3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 110, 20));
+        jPanel3.add(S3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 120, 20));
 
         S4.setText(".");
-        jPanel3.add(S4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 110, 20));
+        jPanel3.add(S4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 110, 20));
 
         S5.setText(".");
-        jPanel3.add(S5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 110, 20));
+        jPanel3.add(S5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 110, 20));
 
         S6.setText(".");
-        jPanel3.add(S6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 110, 20));
+        jPanel3.add(S6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 110, 20));
+
+        stock.setText("0");
+        jPanel3.add(stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 30, -1));
+
+        jLabel12.setText("stock  actual");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         tex3.setText("estado consumidor");
-        jPanel3.add(tex3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 119, -1));
+        jPanel3.add(tex3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 119, -1));
+
+        jLabel11.setText("Cantida consumidad");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/lis2.png"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 210, 260));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/lis2.png"))); // NOI18N
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 210, 260));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/pro3.png"))); // NOI18N
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 160));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/con2.png"))); // NOI18N
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,12 +276,12 @@ public class view extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(114, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))))
         );
         layout.setVerticalGroup(
@@ -286,7 +314,7 @@ public class view extends javax.swing.JFrame {
              
         errorP.setVisible(false); 
         Gestor ges = new Gestor(cantidadP);
-        Productor pro = new Productor(box1,box2,box3,box4,S1,S2,S3,humo1,humo2,humo3,humo4,humo5, humo6,ges);
+        Productor pro = new Productor(box1,box2,box3,box4,S1,S2,S3,humo1,humo2,humo3,humo4,humo5, humo6,stock ,ges);
         Consumidor con = new Consumidor(car1,car2,car3,car4,cont_cons,S4,S5,S6,ges);
         
         pro.start();
@@ -368,7 +396,12 @@ public class view extends javax.swing.JFrame {
     private javax.swing.JLabel humo6;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -376,9 +409,11 @@ public class view extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel stock;
     private javax.swing.JLabel tex1;
     private javax.swing.JLabel tex2;
     private javax.swing.JLabel tex3;
