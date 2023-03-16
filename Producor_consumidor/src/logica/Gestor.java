@@ -10,43 +10,21 @@ import javax.swing.JLabel;
  * @author angel
  */
 public class Gestor  {
-    private int act, max;
-    private Productor prod;
-    private Consumidor cons;
+   
+    public  int act = 0,max;
     
-    public Gestor (Productor producer,Consumidor consumer ,int max ) {
-     this.prod = producer;
-     this.cons = consumer;
+    public Gestor (int max ) {
      this.max = max;
     }
    
-     public void run() 
-    {
-      boolean estado = true;
-      
-           while(estado = true) 
-            {
-
-                synchronized(prod){  
-                    synchronized(this.cons){  
-                     
-                     } 
-                 }
-                 
-             }
-    }
      
-   public void consumiendo () {
-         cons.consumir();
-         try {
-                Thread.sleep(2000);
-            } catch (InterruptedException ex) {
-             ex.printStackTrace();
-            }
-   }  
-   
-   
-   public void producciendo () {
-       prod.decrease();
-   }
+     
+     public void consumir() {
+       act --;
+     }
+     
+     public void producir () {
+      act ++; 
+     } 
+           
 }

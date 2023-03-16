@@ -85,6 +85,7 @@ public class view extends javax.swing.JFrame {
         S4 = new javax.swing.JLabel();
         S5 = new javax.swing.JLabel();
         S6 = new javax.swing.JLabel();
+        tex3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,8 +206,8 @@ public class view extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tex2.setText("cantidad a consumir ");
-        jPanel3.add(tex2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 119, -1));
+        tex2.setText("estado productor");
+        jPanel3.add(tex2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 119, -1));
 
         con_P.setText("0");
         jPanel3.add(con_P, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 21, -1));
@@ -231,6 +232,9 @@ public class view extends javax.swing.JFrame {
 
         S6.setText(".");
         jPanel3.add(S6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 110, 20));
+
+        tex3.setText("estado consumidor");
+        jPanel3.add(tex3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 119, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,21 +270,26 @@ public class view extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+//        Gestor ges = new Gestor();
          int cantidadP;
        cantidadP = Integer.parseInt(canP.getText());
       // cantidadC = Integer.parseInt(canC.getText());
+        System.out.println(cantidadP);
+        
          if (cantidadP <= 0  )
        {
          errorP.setVisible(true);
-       } else {
+       } 
              
         errorP.setVisible(false); 
-        Consumidor con = new Consumidor(car1,car2,car3,car4,con_P,S4,S5,S6,cantidadP);/**/
-        Productor pro = new Productor(box1,box2,box3,box4,S1,S2,S3,cantidadP);//,
-        Gestor ges = new Gestor(pro,con, cantidadP);
+        Gestor ges = new Gestor(cantidadP);
+        Productor pro = new Productor(box1,box2,box3,box4,S1,S2,S3,humo1,humo2,humo3,humo4,humo5, humo6,ges);
+        Consumidor con = new Consumidor(car1,car2,car3,car4,con_P,S4,S5,S6,ges);
+        
+        pro.start();
+        con.start();
+        
          
-      
-         }
        
       
         
@@ -369,5 +378,6 @@ public class view extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel tex1;
     private javax.swing.JLabel tex2;
+    private javax.swing.JLabel tex3;
     // End of variables declaration//GEN-END:variables
 }
