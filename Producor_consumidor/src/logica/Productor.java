@@ -9,10 +9,10 @@ import javax.swing.JLabel;
  * @author angel
  */
 public class Productor  extends Thread{
-    private int max;
+    private int max ,velP;
     private JLabel box1,box2,box3,box4,show1,show2,show3,humo1,humo2,humo3,humo4,humo5,humo6,stock ;
     private Gestor ges;
-    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6 , JLabel stock ,Gestor ges) {
+    public  Productor (JLabel box1, JLabel box2, JLabel box3, JLabel box4,JLabel S1,JLabel S2, JLabel S3,JLabel h1,JLabel h2,JLabel h3,JLabel h4,JLabel h5,JLabel h6 , JLabel stock , int velP ,Gestor ges) {
     this.max = max;
     this.box1 = box1;
     this.box2 = box2;
@@ -29,18 +29,19 @@ public class Productor  extends Thread{
     this.humo6 = h6;
     this.stock = stock;
     this.ges = ges;
+    this.velP = velP;
     }
     
     
      public void run() 
     {
         while (true){
-          
+            System.out.println(velP);
           if(ges.act < ges.max){
             estadoP ("producciendo"); 
             work ();
          try{
-             sleep((int)(Math.random() * 3000));
+             sleep((int)(Math.random() * velP));
          }catch (InterruptedException ex) {
               ex.printStackTrace();
           }

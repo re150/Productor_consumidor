@@ -10,11 +10,11 @@ import javax.swing.JLabel;
  * @author angel
  */
 public class Consumidor extends Thread {
-    private int max, cons = 0;
+    private int max, cons = 0,velC;
     private JLabel car1,car2,car3,car4,cont,show1,show2,show3;
      private Gestor ges;
      
-    public Consumidor (JLabel car1, JLabel car2, JLabel car3, JLabel car4,JLabel contCon,JLabel S4,JLabel S5, JLabel S6, Gestor ges) {
+    public Consumidor (JLabel car1, JLabel car2, JLabel car3, JLabel car4,JLabel contCon,JLabel S4,JLabel S5, JLabel S6, int velC, Gestor ges) {
     this.max = max;
     this.car1 = car1;
     this.car2 = car2;
@@ -25,13 +25,14 @@ public class Consumidor extends Thread {
     this.show2 = S5;
     this.show3 = S6;
     this.ges = ges;
+    this.velC = velC;
     }
     
       public void run() 
     {
      System.out.println(ges.act);
          while (true){
-             
+             System.out.println(velC);
             if(ges.act > 0){
              estadoC ("consumiendo"); 
              
@@ -41,7 +42,7 @@ public class Consumidor extends Thread {
                 car4.setVisible(true);
              
                try{
-                     sleep((int)(Math.random() * 5000));
+                     sleep((int)(Math.random() * velC));
                 }catch (InterruptedException ex) {
                      ex.printStackTrace();
                  }
