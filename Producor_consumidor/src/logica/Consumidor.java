@@ -13,7 +13,8 @@ public class Consumidor extends Thread {
     private int max, cons = 0,velC;
     private JLabel car1,car2,car3,car4,cont,show1,show2,show3;
      private Gestor ges;
-     
+    public  boolean estado = true;
+    
     public Consumidor (JLabel car1, JLabel car2, JLabel car3, JLabel car4,JLabel contCon,JLabel S4,JLabel S5, JLabel S6, int velC, Gestor ges) {
     this.max = max;
     this.car1 = car1;
@@ -31,8 +32,8 @@ public class Consumidor extends Thread {
       public void run() 
     {
      System.out.println(ges.act);
-         while (true){
-             System.out.println(velC);
+         while (estado){
+           //  System.out.println(velC);
             if(ges.act > 0){
              estadoC ("consumiendo"); 
              
